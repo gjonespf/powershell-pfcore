@@ -70,7 +70,7 @@ Task Deploy -Depends Build {
     $lines
 
     $Params = @{
-        Path = $ProjectRoot
+        Path = "$ProjectRoot"
         Force = $true
         Recurse = $false # We keep psdeploy artifacts, avoid deploying those : )
     }
