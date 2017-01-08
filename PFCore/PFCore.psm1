@@ -1,2 +1,2 @@
 #Load ps1 scripts in current dir
-gci $psscriptroot\PFCore-*.ps1 | % { . $_.FullName }
+Get-ChildItem $psscriptroot\PFCore-*.ps1 | ForEach-Object { . $_.FullName }

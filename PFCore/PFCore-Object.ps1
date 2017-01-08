@@ -54,11 +54,11 @@ function Join-Object {
        $Second
     )
     BEGIN {
-       [string[]] $p1 = $First | gm -type Properties | select -expand Name
+       [string[]] $p1 = $First | Get-Member -type Properties | Select-Object -expand Name
     }
     Process {
-       $Output = $First | Select $p1
-       foreach($p in $Second | gm -type Properties | Where { $p1 -notcontains $_.Name } | select -expand Name) {
+       $Output = $First | Select-Object $p1
+       foreach($p in $Second | Get-Member -type Properties | Where-Object { $p1 -notcontains $_.Name } | Select-Object -expand Name) {
           Add-Member -in $Output -type NoteProperty -name $p -value $Second."$p"
        }
        $Output

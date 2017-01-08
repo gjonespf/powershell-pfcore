@@ -1,3 +1,4 @@
+#Simple bootstrap deploy for testing
 Import-Module PowerShellGet
 $PSFeedName="potential-terminator-archer"
 $PSRepoName="PowerFarming.Test"

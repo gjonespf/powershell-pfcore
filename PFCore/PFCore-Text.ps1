@@ -27,7 +27,7 @@ function Convert-TextColumnsToObject($dataVar)
     }
     $splitLinesOn=[Environment]::NewLine
     $columnPreproc="\s{2,}"
-    $headerString = $data | select -f 1
+    $headerString = $data | Select-Object -f 1
     #Preprocess to handle headings with spaces
     $headerElements = ($headerString -replace "$columnPreproc", "|") -split "\|" | Where-Object{$_}
     $headerIndexes = $headerElements | ForEach-Object{$headerString.IndexOf($_)}

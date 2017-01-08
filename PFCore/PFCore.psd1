@@ -9,10 +9,10 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-# RootModule = ''
+RootModule = 'PFCore.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.1.5'
+ModuleVersion = '0.1.7'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -69,7 +69,16 @@ Description = 'Core Powershell helpers'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @()
+FunctionsToExport = @(
+    #Hash
+    "Merge-Hash",
+    #Object
+    "Merge-Object",
+    "Join-Object",
+    "Use-Object",
+    #Text
+    "Convert-TextColumnsToObject"
+)
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
