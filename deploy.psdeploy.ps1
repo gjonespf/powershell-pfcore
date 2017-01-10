@@ -30,7 +30,7 @@ if(
 
 # Publish to gallery with a few restrictions
 if(
-    $env:BHProjectName -and $env:BHProjectName.Count -eq 1 -and
+    $env:BHProjectName -and #$env:BHProjectName.Count -eq 1 -and
     $env:BHBuildSystem -ne 'Unknown' -and
     $env:BHBranchName -eq "master" -and
     $env:BHCommitMessage -match '!deploy'
@@ -44,6 +44,13 @@ if(
                 ApiKey = $ENV:NugetApiKey
             }
         }
+        # By PSGalleryModule {
+        #     FromSource $ENV:BHProjectName
+        #     To PSGallery
+        #     WithOptions @{
+        #         ApiKey = $ENV:NugetApiKey
+        #     }
+        # }
     }
 }
 else
