@@ -2,13 +2,16 @@
 <package >
   <metadata>
     <id>Package</id>
-    <version>0.1.7</version>
+    <version>0.1.8</version>
     <authors>Gavin Jones</authors>
     <owners>Gavin Jones</owners>
     <projectUrl>https://github.com/gjonespf/powershell-pfcore.git</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Core PowerShell helpers</description>
     <releaseNotes>
+      0.1.8
+        - Handle null values in properties without exceptions
+        - Add required parameters for core object funcs
     </releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags></tags>

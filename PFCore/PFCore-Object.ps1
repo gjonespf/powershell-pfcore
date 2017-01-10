@@ -48,10 +48,9 @@ function Join-Object {
     #TODO: Deprec for merge? No overwriting?
     Param(
        [Parameter(Position=0)]
-       $First
-    ,
+       $First = $(throw "The parameter -First is required."),
        [Parameter(Position=1,ValueFromPipeline=$true)]
-       $Second
+       $Second = $(throw "The parameter -Second is required.")
     )
     BEGIN {
        [string[]] $p1 = $First | Get-Member -type Properties | Select-Object -expand Name
@@ -80,15 +79,16 @@ function Join-Object {
 function Merge-Object {
   param(
     [Parameter(Position=0)]
-    $Base,
+    $Base = $(throw "The parameter -Base is required."),
     [Parameter(Position=1)]
-    $Additional
+    $Additional = $(throw "The parameter -Additional is required.")
   )
 
     $propNames = $($Additional | Get-Member -MemberType *Property).Name
     foreach ($propName in $propNames) {
         if ($Base.PSObject.Properties.Match($propName).Count) {
-            if ($Base.$propName.GetType().Name -eq "PSCustomObject")
+            if ($Base.$propName -and
+                $Base.$propName.GetType().Name -eq "PSCustomObject")
             {
                 $Base.$propName = Merge-Object $Base.$propName $Additional.$propName
             }
