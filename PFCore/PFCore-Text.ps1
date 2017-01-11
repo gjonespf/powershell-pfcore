@@ -17,15 +17,19 @@
  	$obj=Convert-TextColumnsToObject $data
  	$obj | ?{ $_."VOLUME NAME" -match "112be" }
 #>
-function Convert-TextColumnsToObject($dataVar)
+function Convert-TextColumnsToObject {
+  param(
+    [Parameter(Position=0)]
+    $TableData = $(throw "The parameter -TableData is required."),
+    $SplitLinesOn=[Environment]::NewLine
+  )
 # TODO: Include an option to mangle header names with spaces/special chars?
-{
-    if($dataVar -is [array])  { 
-        $data=$dataVar 
+
+    if($TableData -is [array])  { 
+        $data=$TableData 
     } else { 
-        $data=$dataVar.Split($splitLinesOn)
+        $data=$TableData.Split($SplitLinesOn)
     }
-    $splitLinesOn=[Environment]::NewLine
     $columnPreproc="\s{2,}"
     $headerString = $data | Select-Object -f 1
     #Preprocess to handle headings with spaces
