@@ -30,7 +30,7 @@ CompanyName = 'Power Farming'
 Copyright = '(c) 2016 Gavin Jones. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'Core Powershell helpers'
+Description = 'PowerFarming Core PowerShell helpers'
 
 # Minimum version of the Windows PowerShell engine required by this module
 # PowerShellVersion = ''
