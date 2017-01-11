@@ -2,13 +2,17 @@
 <package >
   <metadata>
     <id>Package</id>
-    <version>0.1.8</version>
+    <version>0.1.14</version>
     <authors>Gavin Jones</authors>
     <owners>Gavin Jones</owners>
     <projectUrl>https://github.com/gjonespf/powershell-pfcore.git</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>PowerFarming Core PowerShell helpers</description>
     <releaseNotes>
+      0.1.14
+        - Added Invoke-SignChildren
+      0.1.13
+        - Bugfixes
       0.1.8
         - Handle null values in properties without exceptions
         - Add required parameters for core object funcs
