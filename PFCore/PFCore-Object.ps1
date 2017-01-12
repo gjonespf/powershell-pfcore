@@ -94,12 +94,18 @@ function Merge-Object {
             }
             else
             {
-                $Base.$propName = $Additional.$propName
+                #Only set if it has a value
+                if($Additional.$propName) {
+                    $Base.$propName = $Additional.$propName
+                }
             }
         }
         else
         {
-            $Base | Add-Member -MemberType NoteProperty -Name $propName -Value $Additional.$propName
+            #Only set if it has a value
+            if($Additional.$propName) {
+                $Base | Add-Member -MemberType NoteProperty -Name $propName -Value $Additional.$propName -Force
+            }
         }
     }
     return $Base

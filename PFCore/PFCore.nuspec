@@ -9,6 +9,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>PowerFarming Core PowerShell helpers</description>
     <releaseNotes>
+      0.1.15
+        - Default force for Merge-Object, don't set null values
       0.1.14
         - Added Invoke-SignChildren
       0.1.13
