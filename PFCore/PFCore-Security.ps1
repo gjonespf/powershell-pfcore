@@ -34,7 +34,7 @@ function Invoke-SignChildren
         if($fileSig.Status -ne [System.Management.Automation.SignatureStatus]::Valid)
         {
             Write-Host -Foreground "Yellow" "File $file signature needs updating"
-            Set-AuthenticodeSignature $file $Certificate
+            Set-AuthenticodeSignature -FilePath $file -Certificate $Certificate
         }
         else
         {
