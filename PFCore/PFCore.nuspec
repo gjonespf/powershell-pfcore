@@ -2,13 +2,15 @@
 <package >
   <metadata>
     <id>Package</id>
-    <version>0.1.19</version>
+    <version>0.1.20</version>
     <authors>Gavin Jones</authors>
     <owners>Gavin Jones</owners>
     <projectUrl>https://github.com/gjonespf/powershell-pfcore.git</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>PowerFarming Core PowerShell helpers</description>
     <releaseNotes>
+      0.1.20
+        - Find-ChildDirectories fix dupes
       0.1.19
         - Find-ChildDirectories fixes
       0.1.18

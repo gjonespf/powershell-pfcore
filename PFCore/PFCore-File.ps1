@@ -99,7 +99,7 @@ function Find-ChildDirectories {
             }
     })
     Write-Verbose "PathsToSearch: $($pathsToSearch.Count) Excluded: $($excludedPaths.Count)"
-    return $pathsToSearch
+    return ($pathsToSearch | Select-Object -Unique)
 }
 Export-ModuleMember -function Find-ChildDirectories
 
@@ -146,7 +146,7 @@ function Find-ChildItems {
     Write-Verbose "Searching paths for valid dirs: '$($Paths)' excluding '$($ExcludeDirs)' "
     $pathsToSearch = Find-ChildDirectories -Paths $Paths -ExcludeDirs $ExcludeDirs
     $files = $pathsToSearch | Foreach-Object { $path = $_.FullName; $Includes | Foreach-Object { Get-ChildItem (Join-Path $path $_) -Exclude $Excludes } }
-    return $files
+    return ($files | Select-Object -Unique)
 }
 Export-ModuleMember -function Find-ChildItems
 
