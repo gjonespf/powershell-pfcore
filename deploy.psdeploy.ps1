@@ -26,7 +26,7 @@ if(
     }
 }
 
- # Set-BuildEnvironment from BuildHelpers module has populated ENV:BHProjectName
+# Set-BuildEnvironment from BuildHelpers module has populated ENV:BHProjectName
 
 # Publish to gallery with a few restrictions
 if(
