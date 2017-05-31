@@ -12,7 +12,7 @@
 RootModule = 'PFCore.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.1.16'
+ModuleVersion = '0.1.17'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -69,14 +69,16 @@ Description = 'PowerFarming Core PowerShell helpers'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @(
-    'Convert-TextColumnsToObject',
-    'Join-Object',
-    'Merge-Hash',
-    'Merge-Object',
-    'Use-Object',
-    'Invoke-SignChildren'
-    )
+# FunctionsToExport = @(
+#     'Convert-TextColumnsToObject',
+#     'Join-Object',
+#     'Merge-Hash',
+#     'Merge-Object',
+#     'Use-Object',
+#     'Invoke-SignChildren'
+#     )
+# Find them instead
+FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()

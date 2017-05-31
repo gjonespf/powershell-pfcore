@@ -2,13 +2,15 @@
 <package >
   <metadata>
     <id>Package</id>
-    <version>0.1.16</version>
+    <version>0.1.17</version>
     <authors>Gavin Jones</authors>
     <owners>Gavin Jones</owners>
     <projectUrl>https://github.com/gjonespf/powershell-pfcore.git</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>PowerFarming Core PowerShell helpers</description>
     <releaseNotes>
+      0.1.17
+        - Export all functions
       0.1.16
         - Add some file based helpers (Get-ParentPathSegments, Find-ChildDirectories, Find-ChildItems)
       0.1.15
