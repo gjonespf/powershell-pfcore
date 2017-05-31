@@ -94,12 +94,12 @@ function Find-ChildDirectories {
                 $allowed = $false
             }
             if ($allowed) {
-                $searchPath
+                #$searchPath - will be sorted by the child
                 Find-ChildDirectories -Paths "$($searchPath.FullName)" -Excludes $Excludes -ExcludeDirs $ExcludeDirs -Includes $Includes
             }
     })
     Write-Verbose "PathsToSearch: $($pathsToSearch.Count) Excluded: $($excludedPaths.Count)"
-    return ($pathsToSearch | Select-Object -Unique)
+    return $pathsToSearch
 }
 Export-ModuleMember -function Find-ChildDirectories
 
