@@ -12,3 +12,4 @@ Register-PSRepository -Name $PSRepoName -SourceLocation $PSGallerySourceUri -Pub
 Publish-Module -Path ./PFCore -NuGetApiKey $APIKey -Repository $PSRepoName -Verbose
 
 Pause
+ 
