@@ -78,7 +78,9 @@ function Find-ChildDirectories {
     )
 
     $excludedPaths = @()
-    $pathsToSearch = Get-ChildItem $Paths -Directory | ForEach-Object { 
+    $pathsToSearch = @()
+    $pathsToSearch = $pathsToSearch + @(Resolve-Path $Paths | Select-Object -ExpandProperty Path)
+    $pathsToSearch = $pathsToSearch + @(Get-ChildItem $Paths -Directory | ForEach-Object { 
     #$pathsToSearch = Get-ChildItem $Paths -Recurse -Directory | ForEach-Object { 
             $allowed = $true
             $searchPath = $_
@@ -95,7 +97,7 @@ function Find-ChildDirectories {
                 $searchPath
                 Find-ChildDirectories -Paths "$($searchPath.FullName)" -Excludes $Excludes -ExcludeDirs $ExcludeDirs -Includes $Includes
             }
-    }
+    })
     Write-Verbose "PathsToSearch: $($pathsToSearch.Count) Excluded: $($excludedPaths.Count)"
     return $pathsToSearch
 }
